@@ -92,7 +92,7 @@ var choicePool=[];
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-
+characterLength=parseInt(prompt("Please choose a character length between 8 and 128 character"));
 }
 
 // Function for getting a random element from an array

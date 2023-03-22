@@ -98,6 +98,11 @@ if (isNaN(characterLength) || characterLength<8 || characterLength>128) {
   alert ("Please try again and choose a number between 8 and 128");
   return false;
 }
+
+if (confirm ("Do you prefer to have speacial characters in your password?")) {
+  choicePool=choicePool.concat(specialCharacters); 
+}
+
 }
 
 // Function for getting a random element from an array

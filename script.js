@@ -92,6 +92,7 @@ var choicePool=[];
 
 // Function to prompt user for password options
 function getPasswordOptions() {
+choicePool=[]
 characterLength=parseInt(prompt("Please choose a character length between 8 and 128 character"));
 
 if (isNaN(characterLength) || characterLength<8 || characterLength>128) {
@@ -121,7 +122,12 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
-
+var password="";
+for (var i = 0; i < characterLength; i++) {
+  var randomCharacter= Math.floor(Math.random()*characterLength);
+  password=password+choicePool[randomCharacter];
+}
+return password;
 }
 
 // Get references to the #generate element

@@ -87,6 +87,8 @@ var upperCasedCharacters = [
   'Y',
   'Z'
 ];
+var characterLength=8;
+var choicePool=[];
 
 // Function to prompt user for password options
 function getPasswordOptions() {

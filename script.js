@@ -102,6 +102,15 @@ if (isNaN(characterLength) || characterLength<8 || characterLength>128) {
 if (confirm ("Do you prefer to have speacial characters in your password?")) {
   choicePool=choicePool.concat(specialCharacters); 
 }
+if (confirm ("Do you prefer to have numeric characters in your password?")) {
+  choicePool=choicePool.concat(numericCharacters);
+}
+if (confirm ("Do you prefer to have lowercase characters in your password?")) {
+  choicePool=choicePool.concat(lowerCasedCharacters);
+}
+if (confirm ("Do you prefer to have uppercase characters in your password?")) {
+  choicePool=choicePool.concat(upperCasedCharacters);
+}
 
 }
 

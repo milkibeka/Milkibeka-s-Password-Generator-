@@ -111,7 +111,7 @@ if (confirm ("Do you prefer to have lowercase characters in your password?")) {
 if (confirm ("Do you prefer to have uppercase characters in your password?")) {
   choicePool=choicePool.concat(upperCasedCharacters);
 }
-
+return true;
 }
 
 // Function for getting a random element from an array

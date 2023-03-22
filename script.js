@@ -93,6 +93,11 @@ var choicePool=[];
 // Function to prompt user for password options
 function getPasswordOptions() {
 characterLength=parseInt(prompt("Please choose a character length between 8 and 128 character"));
+
+if (isNaN(characterLength) || characterLength<8 || characterLength>128) {
+  alert ("Please try again and choose a number between 8 and 128");
+  return false;
+}
 }
 
 // Function for getting a random element from an array

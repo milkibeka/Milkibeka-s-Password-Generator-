@@ -115,16 +115,11 @@ if (confirm ("Do you prefer to have uppercase characters in your password?")) {
 return true;
 }
 
-// Function for getting a random element from an array
-function getRandom(arr) {
-
-}
-
 // Function to generate password with user input
 function generatePassword() {
 var password="";
 for (var i = 0; i < characterLength; i++) {
-  var randomCharacter= Math.floor(Math.random()*characterLength);
+  var randomCharacter= Math.floor(Math.random()*choicePool.length);
   password=password+choicePool[randomCharacter];
 }
 return password;
@@ -135,11 +130,19 @@ var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector('#password');
+  var validChoice= getPasswordOptions();
 
-  passwordText.value = password;
-}
+  if (validChoice) {
+    var password = generatePassword();
+    var passwordText = document.querySelector('#password');
+    passwordText.value = password;
+  }
+    else {
+
+    passwordText.value="";
+  }
+  }
+
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);

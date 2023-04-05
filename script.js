@@ -97,6 +97,7 @@ characterLength=parseInt(prompt("Please choose a character length between 8 and 
 
 if (isNaN(characterLength) || characterLength<8 || characterLength>128) {
   alert ("Please try again and choose a number between 8 and 128");
+
   return false;
 }
 
@@ -112,16 +113,26 @@ if (confirm ("Do you prefer to have lowercase characters in your password?")) {
 if (confirm ("Do you prefer to have uppercase characters in your password?")) {
   choicePool=choicePool.concat(upperCasedCharacters);
 }
+if(choicePool=="" ){
+  alert("Please try again and choose at least one of the options")
+  return false;
+}
+
 return true;
+
 }
 
 // Function to generate password with user input
+
 function generatePassword() {
+
 var password="";
+
 for (var i = 0; i < characterLength; i++) {
   var randomCharacter= Math.floor(Math.random()*choicePool.length);
   password=password+choicePool[randomCharacter];
 }
+
 return password;
 }
 
@@ -137,12 +148,10 @@ function writePassword() {
     var passwordText = document.querySelector('#password');
     passwordText.value = password;
   }
-    else {
+  else {
 
     passwordText.value="";
   }
   }
-
-
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
